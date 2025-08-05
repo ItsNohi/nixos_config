@@ -11,7 +11,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Enable LUKS support in initrd
-  boot.initrd.luks.devices."crypted".device = "/dev/disk/by-uuid/YOUR-LUKS-PARTITION-UUID";
+  boot.initrd.luks.devices."crypted".device = "/dev/disk/by-partlabel/disk-main-luks";
   # Get the UUID after first format with: `sudo blkid`
 
   # Networking
@@ -24,11 +24,11 @@
   # services.supergfxctl.enable = true;
 
   # Define secrets that are specific to this host
-  age.secrets.luks_password = {
-    file = ../../secrets/luks_password.age;
-    owner = "root";
-    group = "root";
-  };
+  # age.secrets.luks_password = {
+  #  file = ../../secrets/luks_password.age;
+  #  owner = "root";
+  #  group = "root";
+  # };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
