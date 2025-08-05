@@ -46,7 +46,7 @@ Now, run `disko` to format the drive. **THIS WILL WIPE THE TARGET DISK.**
 # Make sure you are in the flake directory
 # The --flake argument points to the nixosConfiguration to use
 # and the `disko` attribute we defined.
-sudo nix run github:nix-community/disko -- --mode disko ./hosts/zephyrus-g14#disko
+sudo nix --extra-experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko ./hosts/zephyrus-g14/disko.nix
 ```
 
 Disko will partition, create the LUKS container, format BTRFS, and mount everything correctly under `/mnt`.
