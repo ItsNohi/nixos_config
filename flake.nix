@@ -1,5 +1,5 @@
 {
-  description = "Base Configuration for Nohi"
+  description = "Base Configuration for Nohi";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -8,7 +8,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     agenix.url = "github:ryantm/agenix";
-  }
+  };
 
   outputs = {self, nixpkgs, disko, agenix, ...}@inputs: {
     nixConfigurations = {
