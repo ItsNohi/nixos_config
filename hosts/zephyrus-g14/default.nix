@@ -15,7 +15,7 @@
   # Get the UUID after first format with: `sudo blkid`
 
   # Networking
-  networking.hostName = "zephyrus-g14";
+  networking.hostName = "nohi-g14";
   networking.networkmanager.enable = true;
 
   # Hardware-specific settings for the G14

@@ -3,7 +3,7 @@
 let
   # Define the disk you want to format.
   # Use `lsblk` on the installer to find the correct device name.
-  disk = "/dev/nvme0n1";
+  disk = "/dev/sda";
 in
 {
   # Disko configuration for UEFI + LUKS + BTRFS
