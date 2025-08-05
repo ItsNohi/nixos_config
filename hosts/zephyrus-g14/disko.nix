@@ -58,7 +58,7 @@ in
                     # Steam subvolume - no snapshots
                     # This prevents backups of large game libraries
                     "@steam" = {
-                      mountpoint = "/home/your-username/.local/share/Steam";
+                      mountpoint = "/home/nohi/.local/share/Steam";
                       mountOptions = [ "compress=zstd" "noatime" "nodatacow" ];
                     };
                   };
