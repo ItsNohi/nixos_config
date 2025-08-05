@@ -43,7 +43,7 @@
   # services.printing.enable = true;
 
   # Set the default shell for users
-  users.defaultUserShell = pkgs.zsh;
+  # users.defaultUserShell = pkgs.zsh;
 
   # This is a good place for system-wide fonts
   fonts.packages = with pkgs; [
