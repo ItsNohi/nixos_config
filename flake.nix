@@ -17,7 +17,7 @@
     };
   };
 
-  outputs = {self, nixpkgs, disko, agenix, ...}@inputs: {
+  outputs = {self, nixpkgs, disko, agenix, home-manager, ...}@inputs: {
     nixosConfigurations = {
       zephyrus-g14 = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
