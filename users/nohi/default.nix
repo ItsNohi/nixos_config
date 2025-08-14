@@ -36,4 +36,4 @@
 
   # This allows home-manager to manage itself
   programs.home-manager.enable = true;
-}
+} 
