@@ -23,6 +23,24 @@
   # For example, for ASUS laptops:
   # services.supergfxctl.enable = true;
 
+  users.users.nohi = {
+    isNormalUser = true;
+    description = "nohi";
+    extraGroups = [ "networkmanager" "wheel" ]; # For network management and sudo access
+    shell = pkgs.zsh; # Or another shell like pkgs.bash
+  };
+
+  # Import the Home Manager configuration for "nohi"
+  home-manager.users.nohi = import ../../users/nohi;
+
+  # Enable the KDE Plasma 6 Desktop Environment
+  services.desktopManager.plasma6.enable = true;
+  
+  # Enable the SDDM Display Manager (login screen)
+  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true; # Prefer Wayland
+
+
   # Define secrets that are specific to this host
   # age.secrets.luks_password = {
   #  file = ../../secrets/luks_password.age;

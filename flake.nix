@@ -11,6 +11,10 @@
       url = "github:ryantm/agenix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {self, nixpkgs, disko, agenix, ...}@inputs: {
@@ -25,6 +29,7 @@
 
           inputs.disko.nixosModules.disko
           agenix.nixosModules.default
+          home-manager.nixosModules.home-manager
         ];
       };
     };
