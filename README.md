@@ -19,17 +19,6 @@ This repository contains the complete, declarative configuration for my NixOS ma
 
 Boot your new machine using a recent NixOS installer USB drive (ensure it's a version that supports flakes, e.g., 23.11 or newer).
 
-**2. Connect to the Internet**
-
-Connect to WiFi or Ethernet.
-
-```bash
-# For WiFi
-iwctl
-station wlan0 scan
-station wlan0 get-networks
-station wlan0 connect "Your-SSID"
-```
 
 **3. Partition and Format with Disko**
 
@@ -43,10 +32,7 @@ cd /mnt/etc/nixos
 Now, run `disko` to format the drive. **THIS WILL WIPE THE TARGET DISK.**
 
 ```bash
-# Make sure you are in the flake directory
-# The --flake argument points to the nixosConfiguration to use
-# and the `disko` attribute we defined.
-sudo nix --extra-experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko ./hosts/zephyrus-g14/disko.nix
+sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko/latest -- --mode destroy,format,mount ./hosts/zephyrus-g14/disko.nix
 ```
 
 Disko will partition, create the LUKS container, format BTRFS, and mount everything correctly under `/mnt`.

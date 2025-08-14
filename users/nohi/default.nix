@@ -30,6 +30,10 @@
   # This is an advanced topic, but you can use home.file to place config files
   # or explore options within home-manager for KDE.
   programs.kdeconnect.enable = true;
+  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.settings.General.DisplayServer = "wayland";
+  services.displayManager.sddm.wayland.enable = true;
+  services.desktopManager.plasma6.enable = true;
 
   # Enable user-level services if needed
   # services.syncthing.enable = true;
