@@ -24,7 +24,7 @@
         specialArgs = {inherit inputs; };
         modules = [
           ./hosts/zephyrus-g14
-          ./users/nohi
+
           ./modules/nixos/base.nix
 
           inputs.disko.nixosModules.disko
